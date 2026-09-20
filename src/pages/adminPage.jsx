@@ -3,6 +3,7 @@ import AdminProductsPage from "./admin/adminProductsPage";
 import AdminAddProductPage from "./admin/adminAddProductPage";
 import AdminEditProductPage from "./admin/adminEditProductPage";
 import AdminOrdersPage from "./admin/adminOrdersPage";
+import AdminReviewsPage from "./admin/adminReviewsPage";
 
 export default function AdminPage(){
     return(
@@ -32,7 +33,7 @@ export default function AdminPage(){
                     <Route path="/add-product" element ={<AdminAddProductPage/>} />
                     <Route path="/edit-product" element ={<AdminEditProductPage/>} />
                     <Route path="/users" element ={<h1>Users Dashboard</h1>} />
-                    <Route path="/reviews" element ={<h1>Reviews Dashboard</h1>} />
+                    <Route path="/reviews" element ={<AdminReviewsPage />} />
                 </Routes>
             </div>
         </div>

@@ -23,7 +23,7 @@ export default function OrderDetailsModal(props){
         const token = localStorage.getItem("token");
 
         try{
-            await api.put("/orders/" + order.orderId , {
+            await api.put("/orders/" + order.orderId , { 
                 notes: notes,
                 status: status
             } , {
