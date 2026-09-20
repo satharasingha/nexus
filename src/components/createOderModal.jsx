@@ -3,14 +3,7 @@ import toast from "react-hot-toast";
 import api from "../utils/api";
 
 export default function CreateOrderModal(props) {
-    /*  firstName : user.firstName,
-        lastName : user.lastName,
-        addressLineOne : req.body.addressLineOne,
-        adressLineTwo : req.body.adressLineTwo,
-        city : req.body.city,
-        state : req.body.state,
-        postalCode : req.body.postalCode,
-        phone : req.body.phone,*/
+   
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
