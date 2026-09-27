@@ -3,6 +3,12 @@ import { Link } from "react-router-dom";
 export default function ProductCard(props) {
     const product = props.product;
 
+    const imageUrl = product.images?.[0]?.startsWith("http")
+        ? product.images[0]
+        : `https://nciogjxuqmegutspycei.supabase.co/storage/v1/object/public/Images/${encodeURIComponent(
+              product.images?.[0] || ""
+          )}`;
+
     return (
         <Link
             to={"/overview/" + product.productId}
@@ -24,7 +30,7 @@ export default function ProductCard(props) {
 
                 {/* Product image */}
                 <img
-                    src={product.images?.[0]}
+                    src={imageUrl}
                     alt={product.name}
                     className="w-full h-full object-cover absolute top-0 left-0 transition-transform duration-700 group-hover:scale-110"
                 />
