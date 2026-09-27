@@ -11,9 +11,9 @@ import api from "../utils/api";
 import getFormattedPrice from "../utils/price-format";
 import { getApprovedReviews } from "../utils/reviews";
 
-/* =========================================================
+/* 
    SCROLL REVEAL HOOK
-========================================================= */
+ */
 function useReveal() {
     const ref = useRef(null);
     const [visible, setVisible] = useState(false);
@@ -94,9 +94,9 @@ export default function HomePage() {
     );
 }
 
-/* =========================================================
+/* 
    HOME CONTENT
-========================================================= */
+*/
 function HomeContent() {
     const [featuredProducts, setFeaturedProducts] = useState([]);
     const [loadingFeatured, setLoadingFeatured] = useState(true);
@@ -105,7 +105,7 @@ function HomeContent() {
 
     /* ---- featured products ---- */
     useEffect(() => {
-        api.get("/products")
+        api.get("/api/products")
             .then((response) => {
                 setFeaturedProducts(response.data.slice(0, 4));
                 setLoadingFeatured(false);
