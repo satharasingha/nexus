@@ -7,13 +7,13 @@ export default function ProductCard(props) {
         <Link
             to={"/overview/" + product.productId}
             state={product}
-            className="group relative w-[300px] h-[450px] m-10 rounded-2xl overflow-hidden flex flex-col justify-between cursor-pointer 
-            bg-gradient-to-b from-[#151515] to-[#0d0d0d] 
-            border border-white/10 
-            hover:border-[#D4AF37]/60 
-            shadow-[0_10px_40px_-10px_rgba(0,0,0,0.8)] 
-            hover:shadow-[0_20px_60px_-10px_rgba(212,175,55,0.3)] 
-            transition-all duration-500 
+            className="group relative w-[300px] h-[450px] m-10 rounded-2xl overflow-hidden flex flex-col justify-between cursor-pointer
+            bg-gradient-to-b from-[#151515] to-[#0d0d0d]
+            border border-white/10
+            hover:border-[#D4AF37]/60
+            shadow-[0_10px_40px_-10px_rgba(0,0,0,0.8)]
+            hover:shadow-[0_20px_60px_-10px_rgba(212,175,55,0.3)]
+            transition-all duration-500
             hover:-translate-y-2"
         >
             {/* Hover glow */}
@@ -21,17 +21,12 @@ export default function ProductCard(props) {
 
             {/* Image area */}
             <div className="w-[300px] h-[300px] relative overflow-hidden bg-[#0a0a0a]">
-                {/* Secondary image (revealed on hover) */}
+
+                {/* Product image */}
                 <img
-                    src={product.images[1]}
-                    alt={product.productName}
+                    src={product.images?.[0]}
+                    alt={product.name}
                     className="w-full h-full object-cover absolute top-0 left-0 transition-transform duration-700 group-hover:scale-110"
-                />
-                {/* Primary image (fades out on hover) */}
-                <img
-                    src={product.images[0]}
-                    alt={product.productName}
-                    className="w-full h-full object-cover absolute top-0 left-0 primary-image transition-opacity duration-500 z-10"
                 />
 
                 {/* Gradient overlay for depth */}
@@ -62,6 +57,7 @@ export default function ProductCard(props) {
 
             {/* Info area */}
             <div className="relative flex-1 flex flex-col justify-between px-5 py-5 z-10">
+
                 {/* Product name */}
                 <h1 className="text-lg font-semibold text-white leading-snug line-clamp-2 group-hover:text-[#D4AF37] transition-colors duration-300">
                     {product.name}
@@ -69,11 +65,13 @@ export default function ProductCard(props) {
 
                 {/* Price row */}
                 <div className="w-full flex flex-col">
+
                     {product.labelledPrice > product.price && (
                         <span className="text-sm text-gray-500 line-through">
                             {product.labelledPrice}
                         </span>
                     )}
+
                     <span className="text-xl font-bold text-[#D4AF37] mt-1">
                         {product.price}
                     </span>
@@ -86,6 +84,7 @@ export default function ProductCard(props) {
                         <span className="text-xs text-gray-500 uppercase tracking-widest">
                             In Stock
                         </span>
+
                         <span className="text-[#D4AF37] text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all duration-300">
                             View
                             <span className="group-hover:translate-x-1 transition-transform duration-300">
